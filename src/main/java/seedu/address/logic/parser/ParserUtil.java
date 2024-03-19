@@ -14,6 +14,7 @@ import seedu.address.model.person.Email;
 import seedu.address.model.person.Grade;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Remark;
 import seedu.address.model.person.Subject;
 import seedu.address.model.tag.Tag;
 
@@ -95,6 +96,13 @@ public class ParserUtil {
             throw new ParseException(Email.MESSAGE_CONSTRAINTS);
         }
         return new Email(trimmedEmail);
+    }
+
+    public static Remark parseRemark(String remark) {
+        requireNonNull(remark);
+        String trimmedEmail = remark.trim();
+
+        return new Remark(remark);
     }
 
     /**

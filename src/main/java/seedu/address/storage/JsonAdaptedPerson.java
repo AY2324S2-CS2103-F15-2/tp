@@ -16,6 +16,7 @@ import seedu.address.model.person.Grade;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Remark;
 import seedu.address.model.person.Subject;
 import seedu.address.model.tag.Tag;
 
@@ -32,6 +33,7 @@ class JsonAdaptedPerson {
     private final String address;
     private final String grade;
     private final String subject;
+    private final String remark;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
 
     /**
@@ -39,9 +41,9 @@ class JsonAdaptedPerson {
      */
     @JsonCreator
     public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address,
-            @JsonProperty("grade") String grade, @JsonProperty("subject") String subject,
-            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+                             @JsonProperty("email") String email, @JsonProperty("address") String address,
+                             @JsonProperty("grade") String grade, @JsonProperty("subject") String subject,
+                             @JsonProperty("tags") List<JsonAdaptedTag> tags,  @JsonProperty("remark") String remark) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -51,6 +53,7 @@ class JsonAdaptedPerson {
         if (tags != null) {
             this.tags.addAll(tags);
         }
+        this.remark = remark;
     }
 
     /**
@@ -63,6 +66,7 @@ class JsonAdaptedPerson {
         address = source.getAddress().value;
         grade = source.getGrade().value;
         subject = source.getSubject().value;
+        remark = source.getRemark().value;
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -127,8 +131,10 @@ class JsonAdaptedPerson {
         }
         final Subject modelSubject = new Subject(subject);
 
+        final Remark modelRemark = new Remark(remark);
+
         final Set<Tag> modelTags = new HashSet<>(personTags);
-        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelGrade, modelSubject, modelTags);
+        return new Person(modelName, modelPhone, modelEmail, modelAddress, modelGrade, modelSubject, modelTags, modelRemark);
     }
 
 }
