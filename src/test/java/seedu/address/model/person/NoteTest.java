@@ -8,7 +8,7 @@ import static seedu.address.testutil.Assert.assertThrows;
 import org.junit.jupiter.api.Test;
 
 public class NoteTest {
-    public static final String EMPTY_NOTE_MESSAGE = "<Note is empty. Please use the edit command to modify the note>";
+    public static final String EMPTY_NOTE_MESSAGE = "-";
     @Test
     public void constructor_null_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> new Note(null));

@@ -52,7 +52,7 @@ public class Messages {
                 .append(person.getAttendance())
                 .append("; Payment: ")
                 .append(person.getPayment())
-                .append("; Note")
+                .append("; Note: ")
                 .append((person.getNote()))
                 .append("; DateTime: ");
         person.getDateTimes().forEach(builder::append);

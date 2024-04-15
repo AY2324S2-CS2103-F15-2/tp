@@ -6,7 +6,7 @@ import static java.util.Objects.requireNonNull;
  * Represents a Student's note in the address book. The note can be empty.
  */
 public class Note {
-    public static final String EMPTY_NOTE_MESSAGE = "<Note is empty. Please use the edit command to modify the note>";
+    public static final String EMPTY_NOTE_MESSAGE = "-";
     public final String value;
 
     /**

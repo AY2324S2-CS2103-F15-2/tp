@@ -8,7 +8,7 @@
     "subject": "English",
     "attendance": "Present",
     "payment": "Paid",
-    "note": "<Note is empty. Please use the edit command to modify the note>",
+    "note": "Sample note",
     "dateTimes": [ "2024-03-02 1800" ],
     "tags": [ "friends" ]
   }, {
@@ -20,7 +20,7 @@
     "subject": "English",
     "attendance": "Present",
     "payment": "Paid",
-    "note": "<Note is empty. Please use the edit command to modify the note>",
+    "note": "Sample note",
     "dateTimes": [ "2024-03-02 1800" ],
     "tags" : [ "owesMoney", "friends" ]
   } ]
